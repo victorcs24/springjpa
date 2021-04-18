@@ -9,7 +9,7 @@
 <div class="container">
 <h1 th:text="${titulo}" class="text-primary"></h1>
 
-<form th:action="@{/form}" th:object="${cliente}" method = "post">
+<form th:action="@{/form}" th:object="${cliente}" method = "post" enctype="multipart/form-data">
 
 <table>
 
@@ -38,6 +38,12 @@
 <td>Fecha</td>
 <td> <input type="text" th:field="*{createAt}" /> </td>
 <td> <span th:if="${#fields.hasErrors('createAt')}" th:errors="*{createAt}"></span> </td>
+</tr>
+
+<tr>
+<td>Archivo: </td>
+<td> <input type="file" name="file" /> </td>
+<td> </td>
 </tr>
 
 <tr>
